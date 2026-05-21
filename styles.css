@@ -1,0 +1,371 @@
+/*
+  Kyle Subido - Personal Portfolio Website
+  Project 1
+  Clean, responsive HTML/CSS only site
+*/
+
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-alt: #eef2f7;
+  --text: #1d2433;
+  --muted: #5d687a;
+  --accent: #183153;
+  --accent-2: #274c77;
+  --border: #dbe2ea;
+  --shadow: 0 12px 30px rgba(19, 35, 58, 0.08);
+  --radius: 18px;
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+a {
+  color: var(--accent-2);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(92%, var(--max-width));
+  margin: 0 auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -50px;
+  background: #fff;
+  color: #000;
+  padding: 10px 14px;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 0;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.nav-links a.active {
+  color: var(--accent-2);
+}
+
+.hero,
+.page-hero {
+  padding: 56px 0 30px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.hero h1,
+.page-hero h1 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1.1;
+  margin: 0 0 18px;
+  color: var(--accent);
+}
+
+.lead {
+  font-size: 1.08rem;
+  color: var(--muted);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.button,
+.button-secondary {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 2px solid transparent;
+}
+
+.button {
+  background: var(--accent);
+  color: #fff;
+}
+
+.button:hover,
+.button:focus {
+  text-decoration: none;
+  background: #10233f;
+}
+
+.button-secondary {
+  background: transparent;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.button-secondary:hover,
+.button-secondary:focus {
+  text-decoration: none;
+  background: #e8eef7;
+}
+
+.profile-card img {
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.profile-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.section {
+  padding: 24px 0 48px;
+}
+
+.section h2 {
+  font-size: 1.9rem;
+  color: var(--accent);
+  margin-top: 0;
+}
+
+.grid-2,
+.grid-3 {
+  display: grid;
+  gap: 22px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.badge {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #e7eef8;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.list-clean {
+  padding-left: 20px;
+}
+
+.list-clean li {
+  margin-bottom: 8px;
+}
+
+.resume-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.resume-sidebar {
+  flex: 1 1 260px;
+}
+
+.resume-main {
+  flex: 2 1 520px;
+}
+
+.resume-block {
+  margin-bottom: 22px;
+}
+
+.resume-block h2,
+.resume-block h3 {
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+.resume-item {
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+}
+
+.resume-item:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.item-header strong {
+  font-size: 1.02rem;
+}
+
+.item-date {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.project-card h3,
+.goal-card h3,
+.contact-card h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.highlight {
+  background: var(--surface-alt);
+  border-left: 5px solid var(--accent-2);
+  padding: 18px;
+  border-radius: 12px;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  margin-bottom: 10px;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  font-weight: 700;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #bcc8d6;
+  font: inherit;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+footer {
+  margin-top: 30px;
+  padding: 26px 0 40px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  text-align: center;
+}
+
+.small-text {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .hero-grid,
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 20px;
+  }
+
+  .hero,
+  .page-hero {
+    padding-top: 30px;
+  }
+}
